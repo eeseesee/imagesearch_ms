@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Search Microservice</title>
+  <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+  <script src="/public/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class = "container">
+    <h1>API Image Search Microservice</h1>
+    <p>Full stack Javascript app built with node.js, express.js, mongoDB, and Bootstrap by <a href="https://github.com/eeseesee">ECC</a></p>
+    <blockquote>
+                User stories:
+                <ul>1. I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</ul>
+                <ul>2. I can paginate through the responses by adding a ?offset=2 parameter to the URL. Each page contains 10 results. For example, offset=2 displays results 11-20.</ul>
+                <ul>3. I can get a list of the most recently submitted search strings.</ul>
+            </blockquote>
+    <h3>Example usage 1:</h3>
+            <code>https://ecc-urlshortener-ms-ms.herokuapp.com/api/imagesearch/cats</code><br>
+    <h3>Example output:</h3>
+            <code>
+              [{"url":"https://upload.wikimedia.org/wikipedia/commons/1/1e/Large_Siamese_cat_tosses_a_mouse.jpg","snippet":"A cat that is playing with a","page":"https://en.wikipedia.org/wiki/Cat"},{"url":"https://www.petfinder.com/wp-content/uploads/2013/09/cat-black-superstitious-fcs-cat-myths-162286659.jpg","snippet":"Cats","page":"https://www.petfinder.com/cats/"},{"url":"https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg","snippet":"Cats (@Cats) | Twitter","page":"https://twitter.com/cats"},{"url":"http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/cat_skin_problems_slideshow/photolibrary_rf_photo_of_cat_scratching.jpg","snippet":"Cat scratching","page":"http://pets.webmd.com/cats/"},{"url":"http://i2.cdn.turner.com/cnnnext/dam/assets/150324154025-14-internet-cats-restricted-super-169.jpeg","snippet":"19 photos: Cats own the","page":"http://www.cnn.com/2016/01/20/health/your-brain-on-cute/"},{"url":"https://www.petfinder.com/wp-content/uploads/2012/11/152177319-declawing-cats-632x475-e1354303246526-632x353.jpg","snippet":"Cat Adoption","page":"https://www.petfinder.com/cats/"},{"url":"http://i.huffpost.com/gen/3620356/thumbs/o-CATS-570.jpg?7","snippet":"\"Does My Cat Love Me?","page":"http://www.huffingtonpost.com/news/cats/"},{"url":"http://ichef-1.bbci.co.uk/news/1024/cpsprodpb/15664/production/_86825678_cats9.png","snippet":"Belgians tweet cat pictures","page":"http://www.bbc.com/news/world-europe-34897645"},{"url":"https://upload.wikimedia.org/wikipedia/commons/d/da/Cat_tongue_macro.jpg","snippet":"The hooked papillae on a cat's","page":"https://en.wikipedia.org/wiki/Cat"},{"url":"https://i.ytimg.com/vi/mW3S0u8bj58/maxresdefault.jpg","snippet":"Funny Cats ► Crazy Animal","page":"https://www.youtube.com/watch?v=mW3S0u8bj58"}]
+            </code><br><br>
+            <h3>Example usage 2:</h3>
+                    <code>https://ecc-urlshortener-ms-ms.herokuapp.com/api/imagesearch/cats?offset=2</code><br>
+            <h3>Example output:</h3>
+                    <code>
+                      [{"url":"http://i.livescience.com/images/i/000/077/669/i02/cat-eyes.jpg?1438963039","snippet":"Why Cats Have Vertical Pupils","page":"http://www.livescience.com/51787-why-cats-have-vertical-pupils.html"},{"url":"http://i2.cdn.turner.com/cnnnext/dam/assets/150325092630-18-internet-cats-super-169.jpeg","snippet":"19 photos: Cats own the","page":"http://www.cnn.com/2016/01/20/health/your-brain-on-cute/"},{"url":"https://www.petfinder.com/wp-content/uploads/2012/11/101438745-cat-conjunctivitis-causes.jpg","snippet":"Fostering Cats","page":"https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/"},{"url":"https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg","snippet":"Funny Cats Compilation [Most","page":"https://www.youtube.com/watch?v=tntOCGkgt98"},{"url":"https://upload.wikimedia.org/wikipedia/commons/9/95/CatVibrissaeFullFace.JPG","snippet":"Cat senses","page":"https://en.wikipedia.org/wiki/Cat_senses"},{"url":"http://www.wired.com/wp-content/uploads/2014/10/cathug.jpg","snippet":"cathug","page":"http://www.wired.com/2014/10/cat-thinks-youre-huge-unpredictable-ape/"},{"url":"http://www.factslides.com/imgs/black-cat.jpg","snippet":"Black cats are considered to","page":"http://www.factslides.com/s-Cats"},{"url":"http://www.catsthemusical.com/wp-content/uploads/2015/05/munkustrap2.png","snippet":"Cats the Musical - Australia","page":"http://www.catsthemusical.com/australia/"},{"url":"https://i.ytimg.com/vi/UIrEM_9qvZU/maxresdefault.jpg","snippet":"Funny Cats Compilation 60 min","page":"https://www.youtube.com/watch?v=UIrEM_9qvZU"},{"url":"http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg","snippet":"views 9","page":"http://allthe2048.com/community-games/cats-d.html"}]
+                      </code><br><br>
+    <h3>Example usage 3:</h3>
+            <code>https://ecc-urlshortener-ms-ms.herokuapp.com/api/latest/4</code><br>
+    <h3>Example output:</h3>
+            <code>
+                [{"term":"lolcats funny","when":"2016-02-22T14:02:43.109Z"},{"term":"lolcats funny","when":"2016-02-22T13:59:01.483Z"},{"term":"lolcats funny","when":"2016-02-22T12:54:41.278Z"},{"term":"lolcats funny","when":"2016-02-22T12:54:41.241Z"},{"term":"test","when":"2016-02-22T12:25:34.348Z"},{"term":"lolcats funny","when":"2016-02-22T12:24:56.486Z"},{"term":"lolcats funny","when":"2016-02-22T08:32:43.742Z"},{"term":"lolcats funny","when":"2016-02-22T06:17:54.101Z"},{"term":"lolcats funny","when":"2016-02-22T05:57:39.939Z"},{"term":"lolcats funny","when":"2016-02-22T05:57:36.586Z"}]
+            </code><br>
+
+  </div>
+</body>
+
+</html>
